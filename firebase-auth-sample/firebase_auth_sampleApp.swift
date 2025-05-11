@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+import Firebase
+
 @main
-struct firebase_auth_sampleApp: App {
-    let persistenceController = PersistenceController.shared
+struct MyApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
 }
